@@ -1,7 +1,7 @@
 {
   "name": "GP at Hand Triage",
   "short_name": "Triage",
-  "start_url": ".",
+  "start_url": "https://beattheforms.github.io/Triage_GP_at_Hand/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2e7d32",
