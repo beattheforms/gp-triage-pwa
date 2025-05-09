@@ -6,9 +6,13 @@
   <title>GP at Hand Triage</title>
   <meta name="theme-color" content="#2e7d32"/>
   <link rel="manifest" href="/gp-triage-pwa/manifest.json">
-<link rel="icon" href="/gp-triage-pwa/icons/icon-192.png">
-  
+  <link rel="icon" href="/gp-triage-pwa/icons/icon-192.png">
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/gp-triage-pwa/service-worker.js').catch(console.error);
+    }
+  </script>
 
   <style>
     body {
@@ -19,7 +23,7 @@
     }
     h1 {
       text-align: center;
-      color: #2e7d32;
+      color: #0738b3;
     }
     .actions {
       text-align: center;
@@ -129,8 +133,8 @@
 
       currentLinks.forEach(([label, code]) => {
         const url = isAdmin
-          ? \`https://gpathand-consult.uk.rapidhealth.co.uk/admin-request/patient-details?request=\${code}\`
-          : \`https://gpathand-consult.uk.rapidhealth.co.uk/triage/patient-details?guideline=\${code}\`;
+          ? `https://gpathand-consult.uk.rapidhealth.co.uk/admin-request/patient-details?request=${code}`
+          : `https://gpathand-consult.uk.rapidhealth.co.uk/triage/patient-details?guideline=${code}`;
 
         const btn = document.createElement("div");
         btn.className = "btn";
@@ -150,10 +154,6 @@
     }
 
     renderLinks();
-
-    if ("serviceWorker" in navigator) {
-navigator.serviceWorker.register("/gp-triage-pwa/service-worker.js").catch(console.error);
-    }
   </script>
 </body>
 </html>
