@@ -8,22 +8,68 @@
   <meta name="theme-color" content="#2e7d32"/>
   <link rel="icon" href="icons/icon-192.png"/>
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 1rem; background: #f9f9f9; }
-    h1 { text-align: center; color: #2e7d32; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
-    .btn { background: white; border-radius: 8px; padding: 1rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; }
-    .btn:hover { background: #e0f2f1; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+    }
+    .actions {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .actions button {
+      margin: 0.3rem;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .actions button:hover {
+      background: #388e3c;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .btn {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #e0f2f1;
+    }
     @media (prefers-color-scheme: dark) {
       body { background: #121212; color: white; }
       .btn { background: #1e1e1e; color: white; }
+      .actions button { background: #444; }
     }
   </style>
 </head>
 <body>
   <h1>GP at Hand Triage</h1>
+
+  <div class="actions">
+    <button onclick="window.open('https://gpathand-consult.uk.rapidhealth.co.uk/child-request', '_blank')">Child Request</button>
+    <button onclick="toggleMode()" id="modeBtn">Switch to Admin Mode</button>
+  </div>
+
   <div class="grid" id="links"></div>
+
   <script>
-    const links = [
+    const triageLinks = [
       ["Acid Reflux","Triage.Abdomen.Acid_Reflux"],
       ["Musculoskeletal","Triage.MSK"],
       ["Rectal Bleeding","Triage.Abdomen.Rectal_bleeding"],
@@ -58,17 +104,49 @@
       ["Pregnancy Issues","Triage.Women_Health.Pregnancy_complication"],
       ["Vaginal Bleeding","Triage.Women_Health.Vaginal_bleeding"]
     ];
-    const container = document.getElementById("links");
-    links.forEach(([label, path]) => {
-      const url = `https://gpathand-consult.uk.rapidhealth.co.uk/triage/patient-details?guideline=${path}`;
-      const btn = document.createElement("div");
-      btn.className = "btn";
-      btn.textContent = label;
-      btn.onclick = () => window.open(url, "_blank");
-      container.appendChild(btn);
-    });
+
+    const adminLinks = [
+      ["Other Enquiry", "OTHER_ENQUIRY"],
+      ["Doctor Letter", "DOCTOR_LETTER"],
+      ["Referral Enquiry", "REFERRAL_ENQUIRY"],
+      ["Fit Note", "FIT_NOTE"],
+      ["Test Results", "TEST_RESULTS"],
+      ["Repeat Prescription", "REPEAT_PRESCRIPTION"],
+      ["Travel Risk Form", "TRAVEL_RISK_FORM"],
+      ["Change of Details", "CHANGE_OF_PERSONAL_DETAILS"]
+    ];
+
+    let isAdmin = false;
+
+    function renderLinks() {
+      const container = document.getElementById("links");
+      container.innerHTML = "";
+
+      const current = isAdmin ? adminLinks : triageLinks;
+      current.forEach(([label, code]) => {
+        const url = isAdmin
+          ? \`https://gpathand-consult.uk.rapidhealth.co.uk/admin-request/patient-details?request=\${code}\`
+          : \`https://gpathand-consult.uk.rapidhealth.co.uk/triage/patient-details?guideline=\${code}\`;
+
+        const btn = document.createElement("div");
+        btn.className = "btn";
+        btn.textContent = label;
+        btn.onclick = () => window.open(url, "_blank");
+        container.appendChild(btn);
+      });
+
+      document.getElementById("modeBtn").textContent = isAdmin ? "Switch to Patient Mode" : "Switch to Admin Mode";
+    }
+
+    function toggleMode() {
+      isAdmin = !isAdmin;
+      renderLinks();
+    }
+
+    renderLinks();
+
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("service-worker.js");
+      navigator.serviceWorker.register("service-worker.js").catch(console.error);
     }
   </script>
 </body>
