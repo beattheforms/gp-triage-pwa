@@ -4,9 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GP at Hand Triage</title>
-  <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#2e7d32"/>
-  <link rel="icon" href="icons/icon-192.png"/>
+  <link rel="manifest" href="/gp-triage-pwa/manifest.json">
+<link rel="icon" href="/gp-triage-pwa/icons/icon-192.png">
+  
+
+
   <style>
     body {
       font-family: sans-serif;
@@ -149,7 +152,7 @@
     renderLinks();
 
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("service-worker.js").catch(console.error);
+navigator.serviceWorker.register("/gp-triage-pwa/service-worker.js").catch(console.error);
     }
   </script>
 </body>
