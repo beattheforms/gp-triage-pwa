@@ -16,7 +16,7 @@
     }
     h1 {
       text-align: center;
-      color: #0738be;
+      color: #2e7d32;
     }
     .actions {
       text-align: center;
@@ -69,7 +69,7 @@
   <div class="grid" id="links"></div>
 
   <script>
-    const triageLinks = [
+    const patientLinks = [
       ["Acid Reflux","Triage.Abdomen.Acid_Reflux"],
       ["Musculoskeletal","Triage.MSK"],
       ["Rectal Bleeding","Triage.Abdomen.Rectal_bleeding"],
@@ -122,8 +122,9 @@
       const container = document.getElementById("links");
       container.innerHTML = "";
 
-      const current = isAdmin ? adminLinks : triageLinks;
-      current.forEach(([label, code]) => {
+      const currentLinks = isAdmin ? adminLinks : patientLinks;
+
+      currentLinks.forEach(([label, code]) => {
         const url = isAdmin
           ? \`https://gpathand-consult.uk.rapidhealth.co.uk/admin-request/patient-details?request=\${code}\`
           : \`https://gpathand-consult.uk.rapidhealth.co.uk/triage/patient-details?guideline=\${code}\`;
@@ -135,7 +136,9 @@
         container.appendChild(btn);
       });
 
-      document.getElementById("modeBtn").textContent = isAdmin ? "Switch to Patient Mode" : "Switch to Admin Mode";
+      document.getElementById("modeBtn").textContent = isAdmin
+        ? "Switch to Patient Mode"
+        : "Switch to Admin Mode";
     }
 
     function toggleMode() {
