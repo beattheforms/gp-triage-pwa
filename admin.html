@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Requests</title>
+  <meta name="theme-color" content="#2e7d32"/>
+  <link rel="icon" href="icons/icon-192.png"/>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #f9f9f9;
+      color: #0738be;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #2e7d32;
+      margin-bottom: 1.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .btn {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: #2e7d32;
+      color: white;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #121212;
+        color: white;
+      }
+
+      .btn {
+        background: #1e1e1e;
+        color: white;
+      }
+
+      .btn:hover {
+        background: #2e7d32;
+        color: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin Request Forms</h1>
+  <div class="grid" id="adminLinks"></div>
+
+  <script>
+    const adminLinks = [
+      ["Other Enquiry", "OTHER_ENQUIRY"],
+      ["Doctor Letter", "DOCTOR_LETTER"],
+      ["Referral Enquiry", "REFERRAL_ENQUIRY"],
+      ["Fit Note", "FIT_NOTE"],
+      ["Test Results", "TEST_RESULTS"],
+      ["Repeat Prescription", "REPEAT_PRESCRIPTION"],
+      ["Travel Risk Form", "TRAVEL_RISK_FORM"],
+      ["Change of Personal Details", "CHANGE_OF_PERSONAL_DETAILS"]
+    ];
+
+    const container = document.getElementById("adminLinks");
+
+    adminLinks.forEach(([label, requestType]) => {
+      const url = `https://gpathand-consult.uk.rapidhealth.co.uk/admin-request/patient-details?request=${requestType}`;
+      const btn = document.createElement("div");
+      btn.className = "btn";
+      btn.textContent = label;
+      btn.onclick = () => window.open(url, "_blank");
+      container.appendChild(btn);
+    });
+  </script>
+</body>
+</html>
