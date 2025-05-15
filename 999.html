@@ -46,6 +46,51 @@
       margin: 1rem 0;
       font-size: 1.1rem;
     }
+    
+    .top-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .top-button {
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      color: #0738be;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .top-button:hover {
+      background-color: #0738be;
+      color: white;
+    }
+
+    .top-button.red {
+      background-color: #d32f2f;
+      color: white;
+    }
+
+    .top-button.red:hover {
+      background-color: #b71c1c;
+    }
+
+      .top-button {
+        background-color: #1e1e1e;
+        color: white;
+      }
+      .top-button:hover {
+        background-color: #0738be;
+        color: white;
+      }
 
     @media (prefers-color-scheme: dark) {
       body {
@@ -65,6 +110,11 @@
 </head>
 <body>
   <h1>Emergency Help</h1>
+    <div class="top-buttons">
+          <a class="top-button" href="index.html">Adult</a>
+    <a class="top-button" href="admin.html">Admin</a>
+    <a class="top-button" href="https://gpathand-consult.uk.rapidhealth.co.uk/child-request" target="_blank">Child</a>
+  </div>
   <div class="notice">Dial 999 immediately if you are suffering from any of the following:</div>
 
   <div class="list">
