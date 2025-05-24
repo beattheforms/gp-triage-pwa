@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Requests</title>
+  <meta name="theme-color" content="#2e7d32"/>
+  <link rel="icon" href="icons/icon-192.png"/>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #f9f9f9;
+      color: #0738be;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #0738be;
+      margin-bottom: 1.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .btn {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: #0738be;
+      color: white;
+    }
+    .top-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .top-button {
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      color: #0738be;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .top-button:hover {
+      background-color: #0738be;
+      color: white;
+    }
+
+    .top-button.red {
+      background-color: #d32f2f;
+      color: white;
+    }
+
+    .top-button.red:hover {
+      background-color: #b71c1c;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #121212;
+        color: white;
+      }
+
+      .btn {
+        background: #1e1e1e;
+        color: white;
+      }
+
+      .btn:hover {
+        background: #2e7d32;
+        color: white;
+      }
+            .top-button {
+        background-color: #1e1e1e;
+        color: white;
+      }
+      .top-button:hover {
+        background-color: #0738be;
+        color: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin Request</h1>
+    <div class="top-buttons">
+    <a class="top-button" href="index.html">Adult</a>
+    <a class="top-button" href="https://gpathand-consult.uk.rapidhealth.co.uk/child-request" target="_blank">Child</a>
+    <a class="top-button red" href="999.html">I'm Dying</a>
+  </div>
+
+  <div class="grid" id="links"></div>
+
+  <script>
+    const links = [
+      ["Acid Reflux","Triage.Abdomen.Acid_Reflux"],
+      ["Musculoskeletal","Triage.MSK"],
+      ["Rectal Bleeding","Triage.Abdomen.Rectal_bleeding"],
+      ["Breathing","Triage.Breathing"],
+      ["Chest Pain","Triage.Chest_Pain"],
+      ["Mouth & Nose","Triage.Mouth_Nose"],
+      ["Constipation","Triage.Abdomen.Constipation"],
+      ["Dental","Triage.Dental"],
+      ["Ear","Triage.Ear"],
+      ["Eye","Triage.Eye"],
+      ["Dizziness","Triage.Non_specific.Dizziness"],
+      ["Headache","Triage.Headache"],
+      ["Minor Injuries","Triage.Minor_injuries"],
+      ["Head Trauma","Triage.Headache.Head_trauma"],
+      ["Men - Breast","Triage.Men_Health.Breast_Problems"],
+      ["Men's Health","Triage.Men_Health"],
+      ["Men's STD","Triage.Men_Health.STD"],
+      ["Mental Health","Triage.Mental_Health"],
+      ["Mouth Ulcers","Triage.Mouth_Nose.Mouth_Ulcers"],
+      ["Non Specific","Triage.Non_specific"],
+      ["Piles","Triage.Abdomen.Piles"],
+      ["Sinusitis","Triage.Mouth_Nose.Sinusitis"],
+      ["Skin - Non Rash","Triage.Skin.Non_Rash"],
+      ["Skin Rash","Triage.Skin.Rash"],
+      ["Sleep","Triage.Sleep"],
+      ["Abdominal Pain","Triage.Abdomen.Pain"],
+      ["Women - Breast","Triage.Women_Health.Breast_problems"],
+      ["Contraception","Triage.Women_Health.Contraception"],
+      ["Women's Health","Triage.Women_Health"],
+      ["Women's STD","Triage.Women_Health.STD"],
+      ["Periods","Triage.Women_Health.Periods"],
+      ["Pregnancy Issues","Triage.Women_Health.Pregnancy_complication"],
+      ["Vaginal Bleeding","Triage.Women_Health.Vaginal_bleeding"]
+    ];
+
+    const container = document.getElementById("links");
+
+    links.forEach(([label, path]) => {
+      const url = `https://gpathand-consult.uk.rapidhealth.co.uk/triage/patient-details?guideline=${path}`;
+      const btn = document.createElement("div");
+      btn.className = "btn";
+      btn.textContent = label;
+      btn.onclick = () => window.open(url, "_blank");
+      container.appendChild(btn);
+    });
+  </script>
+</body>
+</html>
