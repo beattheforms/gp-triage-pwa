@@ -164,6 +164,9 @@
       btn.onclick = () => window.open(url, "_blank");
       container.appendChild(btn);
     });
+      if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js").catch(console.error);
+    }
   </script>
 </body>
 </html>
