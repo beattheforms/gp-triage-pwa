@@ -74,3 +74,381 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Default page template</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="mask-icon" href="assets/favicons/favicon.svg" color="#005eb8">
+    <link rel="icon" sizes="192x192" href="assets/favicons/favicon-192x192.png">
+    <meta name="msapplication-TileImage" content="assets/favicons/mediumtile-144x144.png">
+    <meta name="msapplication-TileColor" content="#005eb8">
+    <meta name="msapplication-square70x70logo" content="assets/favicons/smalltile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="assets/favicons/mediumtile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="assets/favicons/widetile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="assets/favicons/largetile-310x310.png">
+    <link rel="stylesheet" href="assets/css/nhsuk-9.6.1.min.css">
+    <script src="assets/js/nhsuk-9.6.1.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <title>GP QUICK LINKS SURGERY PICKER</title>
+</head>
+
+<body>
+    <section class="nhsuk-hero">
+        <div class="nhsuk-width-container nhsuk-hero--border">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-two-thirds">
+                    <div class="nhsuk-hero__wrapper">
+                        <h1 class="nhsuk-hero__heading nhsuk-heading-l nhsuk-u-margin-top-5">Search for Your Surgery
+                        </h1>
+                        <p class="nhsuk-body-l"> This tool is for patients registered at GP surgeries using the Rapid
+                            Health Triage Form. By installing it, you’ll get direct links to adult health condition
+                            forms—saving you 5–6 unnecessary steps when booking an appointment.</p>
+
+
+
+                        <select id="redirect-select" style="width: 60%;">
+                            <option value="">Choose Your Surgery</option>
+                            <option value="./alvanley/index.html">Alvanley</option>
+                            <option value="./arbury/index.html">Arbury</option>
+                            <option value="./ashfield/index.html">Ashfield</option>
+                            <option value="./atherstone/index.html">Atherstone</option>
+                            <option value="./bartlett/index.html">Bartlett</option>
+                            <option value="./barwell/index.html">Barwell</option>
+                            <option value="./belvoir/index.html">Belvoir</option>
+                            <option value="./blackcountry/index.html">Blackcountry</option>
+                            <option value="./blackwood/index.html">Blackwood</option>
+                            <option value="./bugbrooke/index.html">Bugbrooke</option>
+                            <option value="./camberley/index.html">Camberley</option>
+                            <option value="./castle/index.html">Castle</option>
+                            <option value="./charnwood/index.html">Charnwood</option>
+                            <option value="./chatham/index.html">Chatham</option>
+                            <option value="./cheadle/index.html">Cheadle</option>
+                            <option value="./clmp/index.html">Clmp</option>
+                            <option value="./coastal/index.html">Coastal</option>
+                            <option value="./coventrygp/index.html">Coventry GP</option>
+                            <option value="./devonshirelodge/index.html">Devonshire Lodge</option>
+                            <option value="./enderby/index.html">Enderby</option>
+                            <option value="./enki/index.html">Enki</option>
+                            <option value="./farnhamdene/index.html">Farnhamdene</option>
+                            <option value="./friargate/index.html">Friargate</option>
+                            <option value="./gpathand/index.html">Gpathand</option>
+                            <option value="./grangemc/index.html">Grangemc</option>
+                            <option value="./grovelandsmedicalcentre/index.html">Grovelands Medical Centre</option>
+                            <option value="./groves/index.html">Groves</option>
+                            <option value="./handsworthwood/index.html">Handsworth Wood</option>
+                            <option value="./henfield/index.html">Henfield</option>
+                            <option value="./hillcrestsurgery/index.html">Hillcrest Surgery</option>
+                            <option value="./hinchleywood/index.html">Hinchley Wood</option>
+                            <option value="./holderness/index.html">Holderness</option>
+                            <option value="./knowlegreen/index.html">Knowle Green</option>
+                            <option value="./larwood/index.html">Larwood</option>
+                            <option value="./lauriepike/index.html">Laurie Pike</option>
+                            <option value="./leicesterterrace/index.html">Leicester Terrace</option>
+                            <option value="./lightwater/index.html">Lightwater</option>
+                            <option value="./londonstreet/index.html">London Street</option>
+                            <option value="./marchamroad/index.html">Marcham Road</option>
+                            <option value="./measham/index.html">Measham</option>
+                            <option value="./mirfield/index.html">Mirfield</option>
+                            <option value="./moatfield/index.html">Moatfield</option>
+                            <option value="./modalityeastsurrey/index.html">Modality East Surrey</option>
+                            <option value="./modalitymidsussex/index.html">Modality Mid Sussex</option>
+                            <option value="./montgomeryhouse/index.html">Montgomery House</option>
+                            <option value="./musters/index.html">Musters</option>
+                            <option value="./newhall/index.html">Newhall</option>
+                            <option value="./oakwood/index.html">Oakwood</option>
+                            <option value="./parkhouse/index.html">Parkhouse</option>
+                            <option value="./parkroad/index.html">Park Road</option>
+                            <option value="./pembroke/index.html">Pembroke</option>
+                            <option value="./queensroad/index.html">Queens Road</option>
+                            <option value="./redroofs/index.html">Redroofs</option>
+                            <option value="./riversleyroad/index.html">Riversley Road</option>
+                            <option value="./silverdale/index.html">Silverdale</option>
+                            <option value="./southleicestershire/index.html">South Leicestershire</option>
+                            <option value="./springfieldsurgery/index.html">Springfield Surgery</option>
+                            <option value="./springhillmedicalcentre/index.html">Spring Hill Medical Centre</option>
+                            <option value="./staines/index.html">Staines</option>
+                            <option value="./standrews/index.html">St Andrews</option>
+                            <option value="./stationroad/index.html">Station Road</option>
+                            <option value="./stationstreet/index.html">Station Street</option>
+                            <option value="./stmartins/index.html">St Martins</option>
+                            <option value="./suttoncoldfieldgp/index.html">Ley Hill Surgery</option>
+                            <option value="./suttoncoldfieldgp2/index.html">Four Oaks Medical Centre</option>
+                            <option value="./suttoncoldfieldgp3/index.html">Falcon Lodge Medical Centre</option>
+                            <option value="./suttoncoldfieldgp4/index.html">Sutton Park Surgery</option>
+                            <option value="./suttoncoldfieldgp5/index.html">Tudor Practice</option>
+                            <option value="./suttoncoldfieldgp6/index.html">Vesey Practice</option>
+                            <option value="./virmaniandbedi/index.html">Virmani and Bedi</option>
+                            <option value="./wayside/index.html">Wayside</option>
+                        </select>
+
+                        <button id="go-button">Go</button>
+
+                        <script>
+                            $(document).ready(function () {
+                                $('#redirect-select').select2();
+
+                                $('#go-button').on('click', function () {
+                                    const selectedUrl = $('#redirect-select').val();
+                                    if (selectedUrl) {
+                                        window.location.href = selectedUrl;
+                                    } else {
+                                        alert('Please select a site first.');
+                                    }
+                                });
+                            });
+                        </script>
+                        <br>
+
+
+                        <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#"
+                            draggable="false" role="button">
+                            Sign up
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GP at Hand - PWA Tabs</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2e7d32"/>
+  <link rel="icon" href="icons/icon-192.png"/>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    header {
+      background: #2e7d32;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .tabs {
+      display: flex;
+      background: #e0e0e0;
+      justify-content: space-around;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      background: #cfcfcf;
+      border-bottom: 4px solid transparent;
+    }
+
+    .tab.active {
+      background: #ffffff;
+      border-bottom: 4px solid #2e7d32;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 1rem;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .btn {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: #2e7d32;
+      color: white;
+    }
+
+    .alert {
+      background: #d32f2f;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #121212;
+        color: white;
+      }
+      .tab { background: #333; color: white; }
+      .tab.active { background: #1e1e1e; }
+      .btn { background: #1e1e1e; color: white; }
+      .btn:hover { background: #2e7d32; }
+      .alert { background: #ff4444; color: black; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>GP at Hand</h1>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="triage">Triage</div>
+    <div class="tab" data-tab="admin">Admin</div>
+    <div class="tab" data-tab="emergency">Emergency</div>
+  </div>
+
+  <div class="tab-content active" id="triage">
+    <div class="grid" id="triageLinks"></div>
+  </div>
+
+  <div class="tab-content" id="admin">
+    <div class="grid" id="adminLinks"></div>
+  </div>
+
+  <div class="tab-content" id="emergency">
+    <div class="alert">Dial 999 immediately if you are suffering from any of the following:</div>
+    <div>
+      <p><strong>Signs of a heart attack</strong><br>chest pain, pressure, heaviness, tightness or squeezing across the chest</p>
+      <p><strong>Signs of a stroke</strong><br>face dropping on one side, cannot hold both arms up, difficulty speaking</p>
+      <p><strong>Severe difficulty breathing</strong><br>not being able to get words out, choking or gasping</p>
+      <p><strong>Seizure (fit)</strong><br>shaking or jerking because of a fit, or unconscious (cannot be woken up)</p>
+      <p><strong>Severe injuries</strong><br>after a serious accident or assault</p>
+      <p><strong>Choking</strong><br>on liquids or solids right now</p>
+      <p><strong>Sudden, rapid swelling</strong><br>of the eyes, lips, mouth, throat or tongue</p>
+      <p><strong>Sudden confusion (delirium)</strong><br>cannot be sure of your name or age</p>
+      <p><strong>Heavy bleeding</strong><br>spraying, pouring or enough blood to make a puddle</p>
+      <p><strong>Your life is in danger (suicide attempt)</strong><br>you have taken something or self-harmed, or may be about to do this</p>
+      <p><em>See NHS advice on when to call 999 if you are unsure.</em></p>
+    </div>
+  </div>
+
+  <script>
+    // Triage links
+    const triageLinks = [
+      ["Acid Reflux","Triage.Abdomen.Acid_Reflux"],
+      ["Musculoskeletal","Triage.MSK"],
+      ["Rectal Bleeding","Triage.Abdomen.Rectal_bleeding"],
+      ["Breathing","Triage.Breathing"],
+      ["Chest Pain","Triage.Chest_Pain"],
+      ["Mouth & Nose","Triage.Mouth_Nose"],
+      ["Constipation","Triage.Abdomen.Constipation"],
+      ["Dental","Triage.Dental"],
+      ["Ear","Triage.Ear"],
+      ["Eye","Triage.Eye"],
+      ["Dizziness","Triage.Non_specific.Dizziness"],
+      ["Headache","Triage.Headache"],
+      ["Minor Injuries","Triage.Minor_injuries"],
+      ["Head Trauma","Triage.Headache.Head_trauma"],
+      ["Men - Breast","Triage.Men_Health.Breast_Problems"],
+      ["Men's Health","Triage.Men_Health"],
+      ["Men's STD","Triage.Men_Health.STD"],
+      ["Mental Health","Triage.Mental_Health"],
+      ["Mouth Ulcers","Triage.Mouth_Nose.Mouth_Ulcers"],
+      ["Non Specific","Triage.Non_specific"],
+      ["Piles","Triage.Abdomen.Piles"],
+      ["Sinusitis","Triage.Mouth_Nose.Sinusitis"],
+      ["Skin - Non Rash","Triage.Skin.Non_Rash"],
+      ["Skin Rash","Triage.Skin.Rash"],
+      ["Sleep","Triage.Sleep"],
+      ["Abdominal Pain","Triage.Abdomen.Pain"],
+      ["Women - Breast","Triage.Women_Health.Breast_problems"],
+      ["Contraception","Triage.Women_Health.Contraception"],
+      ["Women's Health","Triage.Women_Health"],
+      ["Women's STD","Triage.Women_Health.STD"],
+      ["Periods","Triage.Women_Health.Periods"],
+      ["Pregnancy Issues","Triage.Women_Health.Pregnancy_complication"],
+      ["Vaginal Bleeding","Triage.Women_Health.Vaginal_bleeding"]
+    ];
+    const triageContainer = document.getElementById("triageLinks");
+
+    triageLinks.forEach(([label, path]) => {
+      const url = `https://gpathand-consult.uk.rapidhealth.co.uk/triage/patient-details?guideline=${path}`;
+      const btn = document.createElement("div");
+      btn.className = "btn";
+      btn.textContent = label;
+      btn.onclick = () => window.open(url, "_blank");
+      triageContainer.appendChild(btn);
+    });
+
+    // Admin links
+    const adminLinks = [
+      ["Other Enquiry", "OTHER_ENQUIRY"],
+      ["Doctor Letter", "DOCTOR_LETTER"],
+      ["Referral Enquiry", "REFERRAL_ENQUIRY"],
+      ["Fit Note", "FIT_NOTE"],
+      ["Test Results", "TEST_RESULTS"],
+      ["Repeat Prescription", "REPEAT_PRESCRIPTION"],
+      ["Travel Risk Form", "TRAVEL_RISK_FORM"],
+      ["Change of Personal Details", "CHANGE_OF_PERSONAL_DETAILS"]
+    ];
+    const adminContainer = document.getElementById("adminLinks");
+
+    adminLinks.forEach(([label, request]) => {
+      const url = `https://gpathand-consult.uk.rapidhealth.co.uk/admin-request/patient-details?request=${request}`;
+      const btn = document.createElement("div");
+      btn.className = "btn";
+      btn.textContent = label;
+      btn.onclick = () => window.open(url, "_blank");
+      adminContainer.appendChild(btn);
+    });
+
+    // Tab switching
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+      });
+    });
+
+    // Register PWA
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js").catch(console.error);
+    }
+  </script>
+
+</body>
+</html>
