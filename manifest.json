@@ -5,7 +5,7 @@
   "scope": "/gp-triage-pwa/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2e7d32",
+  "theme_color": "#0738be",
   "icons": [
     {
       "src": "/gp-triage-pwa/icons/icon-192.png",
